@@ -1,0 +1,15 @@
+[iosswitches]
+sw1 
+sw2
+sw5
+
+[iosswitches:vars]
+ansible_network_os=ios
+
+[eosswitches]
+sw3
+sw4
+sw6
+
+[eosswitches:vars]
+ansible_network_os=eos

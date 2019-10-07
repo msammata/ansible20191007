@@ -1,0 +1,23 @@
+---
+- name:  Our second playbook multi host
+  hosts:  planet-express
+  gather_facts: yes    ## this is on my default, but this is a remdiner that it runs
+
+
+  tasks:
+
+          - name:  Manage apps with apt
+            apt:
+
+                    name: sl
+                    state:  present
+            become:  yes
+            when:  ansible_os_family == "Debian"
+            
+          - name:  Manage apps with yum          
+            yum:
+
+                    name: sl
+                    state: present
+            become:  yes            
+            when:  ansible_os_family == "RedHat"

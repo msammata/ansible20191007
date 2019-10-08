@@ -1,0 +1,19 @@
+---
+- name: Learning about Template Module
+  hosts: planetexpress
+  gather_facts: yes
+
+
+  vars:
+     enginetype: darkmatter
+     people: "Fry, Lela, Zoidberg"
+     stuffincargo: Slurm Cola
+     primarymission: Make a delivery of slumm cola to the outer region
+
+  tasks:
+          - name: build a temple
+            # ninja template
+            template: 
+                     srcr: template01.j2
+                     dest: ~/ship.cfg
+

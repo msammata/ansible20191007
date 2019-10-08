@@ -1,0 +1,16 @@
+---
+- name: set the eos banner
+  hosts: eosswitches
+  connection: network_cli
+  gather_facts: no
+
+ 
+  tasks:
+          - name: use eosbanner to set a banner of the day
+            eos_banner:
+                    banner: login
+                    text: you've just logged into a switch
+                    state: absent
+            become: yes
+
+
